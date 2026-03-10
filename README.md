@@ -12,14 +12,14 @@ Ensure that you are serving the U-Boot file as openwrt-airoha-an7581-gemtek_w170
 
 On your UART console, enter the following commands:
 ```
-> setenv one flash read 0x600000 0x100000 \$loadaddr
-> setenv two "; bootm"
-> setenv bootcmd "$one$two"
-> saveenv
-> setenv serverip 192.168.1.10 ; setenv ipaddr 192.168.1.1 ; tftpboot 0x89000000 openwrt-airoha-an7581-gemtek_w1700k-ubi-chainload-uboot.itb
-> flash erase 0x600000 0x100000
-> flash write 0x600000 0x100000 0x89000000
-> reboot
+setenv serverip 192.168.1.10 ; setenv ipaddr 192.168.1.1 ; tftpboot 0x89000000 openwrt-airoha-an7581-gemtek_w1700k-ubi-chainload-uboot.itb
+setenv one flash read 0x600000 0x100000 \$loadaddr
+setenv two "; bootm"
+setenv bootcmd "$one$two"
+saveenv
+flash erase 0x600000 0x100000
+flash write 0x600000 0x100000 0x89000000
+reset
 ```
 
 Your device will now reboot to the U-Boot Chainloader.
