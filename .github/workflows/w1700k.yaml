@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 env:
-  REMOTE_REPOSITORY: hurrian/openwrt-w1700k
+  REMOTE_REPOSITORY: w1700k/installer-repo
   REMOTE_BRANCH: w1700k
   TARGET_SUBTARGET: airoha/an7581
   INNER_CONFIG: configs/w1700k.config
